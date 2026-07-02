@@ -1,3 +1,8 @@
+mod math;
+mod particle;
+mod simulation;
+
 fn main() {
-    println!("Hello, world!");
+    let sim = simulation::Simulation::new();
+    println!("{:?}", sim.particles);
 }
