@@ -1,0 +1,1 @@
+cargo run --quiet | python .\src\visual.py
