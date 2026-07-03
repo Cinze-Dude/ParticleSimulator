@@ -21,7 +21,7 @@ fn main() {
                 },
                 motion: particle::Motion {
                     velocity: math::Vec3 {
-                        x: 1.0,
+                        x: 100.0,
                         y: 1.0,
                         z: 1.0,
                     },
