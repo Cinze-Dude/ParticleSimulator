@@ -1,7 +1,10 @@
 mod forces;
 mod math;
 mod particle;
+mod physics;
 mod simulation;
+
+use std::io::Write;
 
 fn main() {
     let dt = 1.0 / 60.0;
@@ -11,7 +14,7 @@ fn main() {
             state: particle::ParticleState {
                 transform: particle::Transform {
                     position: math::Vec3 {
-                        x: 1.0,
+                        x: 0.0,
                         y: 0.0,
                         z: 0.0,
                     },
@@ -23,24 +26,24 @@ fn main() {
                 },
                 motion: particle::Motion {
                     velocity: math::Vec3 {
-                        x: 16.0,
-                        y: 1.0,
-                        z: 1.0,
+                        x: 10.0,
+                        y: 12.25,
+                        z: 0.0,
                     },
                     ang_vel: math::Vec3 {
-                        x: 0.1,
-                        y: 0.1,
-                        z: 0.1,
+                        x: 0.0,
+                        y: 0.0,
+                        z: 0.0,
                     },
                     acceleration: math::Vec3 {
-                        x: 0.1,
-                        y: 0.1,
-                        z: 0.1,
+                        x: -1.0,
+                        y: -9.8,
+                        z: 0.0,
                     },
                     ang_accel: math::Vec3 {
-                        x: 0.1,
-                        y: 0.1,
-                        z: 0.1,
+                        x: 0.0,
+                        y: 0.0,
+                        z: 0.0,
                     },
                 },
             },
