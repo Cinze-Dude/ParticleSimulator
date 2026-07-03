@@ -20,8 +20,8 @@ impl Simulation {
 
     pub fn step(&mut self, dt: f64) {
         self.time += dt;
-        forces::calc_velocity(&mut self.particles, dt);
-        forces::calc_acceleration(&mut self.particles, dt);
+        forces::intg_acceleration(&mut self.particles, dt);
+        forces::intg_velocity(&mut self.particles, dt);
     }
 
     pub fn add_particle(&mut self, particle: particle::Particle) {

@@ -23,7 +23,9 @@ for line in sys.stdin:
 
     t.clear()
 
-    t.write(f"Time: {frame["time"] :.2f}s", align="left", font=("Arial", 16, "normal"))
+    t.goto(-390, 360)
+
+    t.write(f"Time: {frame['time'] :.2f}s", align="left", font=("Arial", 16, "normal"))
 
     for p in frame["particles"]:
         draw_point(p)

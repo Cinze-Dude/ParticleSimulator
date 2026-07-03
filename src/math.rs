@@ -102,6 +102,36 @@ impl Neg for Vec3 {
     }
 }
 
+impl Vec3 {
+    pub fn magnitude(&self) -> f64 {
+        (self.x * self.x + self.y * self.y + self.z * self.z).sqrt()
+    }
+
+    pub fn length(&self) -> f64 {
+        self.x * self.x + self.y * self.y + self.z * self.z
+    }
+
+    pub fn normalize(&self) -> Vec3 {
+        *self / (self.magnitude() + std::f64::EPSILON)
+    }
+
+    pub fn dot(&self, other: &Vec3) -> f64 {
+        self.x * other.x + self.y * other.y + self.z * other.z
+    }
+
+    pub fn cross(&self, other: &Vec3) -> Vec3 {
+        Vec3 {
+            x: self.y * other.z - self.z * other.y,
+            y: self.z * other.x - self.x * other.z,
+            z: self.x * other.y - self.y * other.x,
+        }
+    }
+
+    pub fn distance(&self, other: &Vec3) -> f64 {
+        (*self - *other).magnitude()
+    }
+}
+
 #[derive(Debug, Clone, Copy, Serialize)]
 pub struct Color {
     pub r: u8,
