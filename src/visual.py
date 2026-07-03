@@ -11,6 +11,8 @@ t = turtle.Turtle()
 t.hideturtle()
 t.penup()
 
+screen.bgcolor(0, 0, 0)
+
 def draw_point(particle: Any, pos_factor: float = 10.0, radius_factor: float = 10.0) -> None:
     t.goto(particle["state"]["transform"]["position"]["x"] * pos_factor, particle["state"]["transform"]["position"]["y"] * pos_factor)
     t.color(particle["attr"]["color"]["r"] / 255, particle["attr"]["color"]["g"] / 255, particle["attr"]["color"]["b"] / 255)
@@ -22,6 +24,8 @@ for line in sys.stdin:
         continue
 
     t.clear()
+
+    t.write(f"Time: {frame["time"] :.2f}s", align="left", font=("Arial", 16, "normal"))
 
     for p in frame["particles"]:
         draw_point(p)
