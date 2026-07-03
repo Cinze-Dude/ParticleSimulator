@@ -1,6 +1,7 @@
 #![allow(dead_code)]
 
-use crate::{forces::calc_velocity, particle};
+use crate::forces;
+use crate::particle;
 use serde::Serialize;
 
 #[derive(Debug, Clone, Serialize)]
@@ -15,8 +16,9 @@ impl Simulation {
         }
     }
 
-    pub fn step(&mut self) {
-        calc_velocity(&mut self.particles);
+    pub fn step(&mut self, dt: f64) {
+        forces::calc_velocity(&mut self.particles, dt);
+        forces::calc_acceleration(&mut self.particles, dt);
     }
 
     pub fn add_particle(&mut self, particle: particle::Particle) {

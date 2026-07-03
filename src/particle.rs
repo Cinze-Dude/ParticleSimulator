@@ -14,6 +14,8 @@ pub struct Transform {
 pub struct Motion {
     pub velocity: math::Vec3,
     pub ang_vel: math::Vec3,
+    pub acceleration: math::Vec3,
+    pub ang_accel: math::Vec3,
 }
 
 #[derive(Debug, Clone, Serialize)]
