@@ -8,7 +8,7 @@ fn main() {
             state: particle::ParticleState {
                 transform: particle::Transform {
                     position: math::Vec3 {
-                        x: 0.0,
+                        x: 1.0,
                         y: 0.0,
                         z: 0.0,
                     },
