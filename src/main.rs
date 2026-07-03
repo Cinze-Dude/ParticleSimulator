@@ -1,3 +1,4 @@
+mod forces;
 mod math;
 mod particle;
 mod simulation;
