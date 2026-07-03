@@ -44,5 +44,6 @@ fn main() {
             },
         }],
     };
-    println!("{:?}", sim.particles);
+    let json = serde_json::to_string(&sim).unwrap();
+    println!("{json}");
 }

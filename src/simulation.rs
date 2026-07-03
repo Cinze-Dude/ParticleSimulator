@@ -1,7 +1,10 @@
 #![allow(dead_code)]
 
+use serde::Serialize;
+
 use crate::particle;
 
+#[derive(Debug, Clone, Serialize)]
 pub struct Simulation {
     pub particles: Vec<particle::Particle>,
 }
