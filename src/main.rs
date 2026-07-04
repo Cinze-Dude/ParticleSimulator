@@ -6,6 +6,8 @@ mod simulation;
 
 use std::io::Write;
 
+use crate::math::Vec3;
+
 fn main() {
     let dt = 1.0 / 60.0;
 
@@ -58,6 +60,11 @@ fn main() {
                 b: 255,
             },
         },
+        forces: vec![particle::Force::Initial(math::Vec3 {
+            x: 0.0,
+            y: 0.0,
+            z: 0.0,
+        })],
     });
     sim.add_particle(particle::Particle {
         state: particle::ParticleState {
@@ -107,6 +114,11 @@ fn main() {
                 b: 0,
             },
         },
+        forces: vec![particle::Force::Initial(math::Vec3 {
+            x: 0.0,
+            y: 0.0,
+            z: 0.0,
+        })],
     });
     loop {
         sim.step(dt);

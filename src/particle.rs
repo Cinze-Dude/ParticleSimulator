@@ -5,6 +5,12 @@ use serde::Serialize;
 use crate::math;
 
 #[derive(Debug, Clone, Serialize)]
+pub enum Force {
+    Gravity(math::Vec3),
+    Initial(math::Vec3),
+}
+
+#[derive(Debug, Clone, Serialize)]
 pub struct Transform {
     pub position: math::Vec3,
     pub rotation: math::Vec3,
@@ -37,4 +43,5 @@ pub struct ParticleAttr {
 pub struct Particle {
     pub state: ParticleState,
     pub attr: ParticleAttr,
+    pub forces: Vec<Force>,
 }
