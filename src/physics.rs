@@ -1,4 +1,5 @@
-use crate::math::Vec3;
+#![allow(dead_code)]
+
 use crate::particle;
 
 pub fn calc_force(particle: &particle::Particle) -> crate::math::Vec3 {

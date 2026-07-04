@@ -119,8 +119,6 @@ impl Vec3 {
         self.x * other.x + self.y * other.y + self.z * other.z
     }
 
-    pub fn tensor(&self, other: &Vec3) -> 
-
     pub fn cross(&self, other: &Vec3) -> Vec3 {
         Vec3 {
             x: self.y * other.z - self.z * other.y,

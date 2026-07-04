@@ -22,6 +22,7 @@ impl Simulation {
         self.time += dt;
         forces::intg_acceleration(&mut self.particles, dt);
         forces::intg_velocity(&mut self.particles, dt);
+        forces::intg_gravity(&mut self.particles, dt);
     }
 
     pub fn add_particle(&mut self, particle: particle::Particle) {

@@ -49,13 +49,62 @@ fn main() {
         },
         attr: particle::ParticleAttr {
             id: 1,
-            mass: 1.0,
+            mass: 10000.0,
             radius: 1.0,
             charge: 1.0,
             color: math::Color {
                 r: 000,
                 g: 000,
                 b: 255,
+            },
+        },
+    });
+    sim.add_particle(particle::Particle {
+        state: particle::ParticleState {
+            transform: particle::Transform {
+                position: math::Vec3 {
+                    x: 0.0,
+                    y: 0.0,
+                    z: 0.0,
+                },
+                rotation: math::Vec3 {
+                    x: 0.0,
+                    y: 0.0,
+                    z: 0.0,
+                },
+            },
+            motion: particle::Motion {
+                velocity: math::Vec3 {
+                    x: 10.0,
+                    y: 18.325,
+                    z: 0.0,
+                },
+                ang_vel: math::Vec3 {
+                    x: 0.0,
+                    y: 0.0,
+                    z: 0.0,
+                },
+                acceleration: math::Vec3 {
+                    x: -1.0,
+                    y: -9.8,
+                    z: 0.0,
+                },
+                ang_accel: math::Vec3 {
+                    x: 0.0,
+                    y: 0.0,
+                    z: 0.0,
+                },
+            },
+        },
+        attr: particle::ParticleAttr {
+            id: 1,
+            mass: 10000.0,
+            radius: 1.0,
+            charge: 1.0,
+            color: math::Color {
+                r: 000,
+                g: 255,
+                b: 0,
             },
         },
     });
