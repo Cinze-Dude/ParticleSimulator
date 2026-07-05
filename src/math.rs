@@ -103,6 +103,18 @@ impl Neg for Vec3 {
 }
 
 impl Vec3 {
+    pub fn new(x: f64, y: f64, z: f64) -> Self {
+        Self { x: x, y: y, z: z }
+    }
+
+    pub fn ZERO() -> Self {
+        Self {
+            x: 0.0,
+            y: 0.0,
+            z: 0.0,
+        }
+    }
+
     pub fn magnitude(&self) -> f64 {
         (self.x * self.x + self.y * self.y + self.z * self.z).sqrt()
     }
@@ -137,4 +149,10 @@ pub struct Color {
     pub r: u8,
     pub g: u8,
     pub b: u8,
+}
+
+impl Color {
+    pub fn new(r: u8, g: u8, b: u8) -> Self {
+        Self { r: r, g: g, b: b }
+    }
 }
